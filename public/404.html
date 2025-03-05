@@ -5,31 +5,29 @@
 		<title>Henry Liu</title>
 
 		<script>
-			console.log('404');
-			const pathSegmentsToKeep = 1;
+			// If you are not using custom domain on Github Pages set pathSegmentsToKeep = 0, otherwise set pathSegmentsToKeep = 1.
+			const pathSegmentsToKeep = 0;
 			const l = location;
-			const url = l.protocol;
-			console.log(url);
-			// const url =
-			// 	l.protocol +
-			// 	'//' +
-			// 	l.hostname +
-			// 	(l.port ? ':' + l.port : '') +
-			// 	l.pathname
-			// 		.split('/')
-			// 		.slice(0, 1 + pathSegmentsToKeep)
-			// 		.join('/') +
-			// 	'/?/' +
-			// 	l.pathname
-			// 		.slice(1)
-			// 		.split('/')
-			// 		.slice(pathSegmentsToKeep)
-			// 		.join('/')
-			// 		.replace(/&/g, '~and~') +
-			// 	(l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-			// 	l.hash;
-			// console.log(url);
-			// l.replace(url);
+
+			l.replace(
+				l.protocol +
+					'//' +
+					l.hostname +
+					(l.port ? ':' + l.port : '') +
+					l.pathname
+						.split('/')
+						.slice(0, 1 + pathSegmentsToKeep)
+						.join('/') +
+					'/?/' +
+					l.pathname
+						.slice(1)
+						.split('/')
+						.slice(pathSegmentsToKeep)
+						.join('/')
+						.replace(/&/g, '~and~') +
+					(l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+					l.hash
+			);
 		</script>
 	</head>
 
