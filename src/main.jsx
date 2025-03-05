@@ -24,21 +24,21 @@ class App extends Component {
 				<BrowserRouter>
 					<AnimatePresence>
 						<Switch>
-							<Route path="/">
+							<Route exact path="/">
 								<Home />
 							</Route>
 
-							<Route path="/about">
+							<Route exact path="/about">
 								<About />
 							</Route>
 
-							<Route path="/contact">
+							<Route exact path="/contact">
 								<Contact />
 							</Route>
 
 							{Posts.map((post, idx) => {
 								return (
-									<Route key={idx} path={`/${post.route}`}>
+									<Route exact key={idx} path={`/${post.route}`}>
 										<BlogPost
 											title={post.title}
 											date={post.date}
