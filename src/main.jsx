@@ -18,21 +18,13 @@ import Posts from './posts/Posts.js';
 
 class App extends Component {
 	render() {
-		if (window.location.hostname !== 'localhost') {
-			// Google Analytics ID goes here.
-			let trackingId = '123';
-
-			ReactGA.initialize(trackingId);
-			ReactGA.pageview('/home');
-		}
-
 		return (
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				<BrowserRouter>
 					<AnimatePresence>
 						<Switch>
-							<Route path="/home">
+							<Route path="/">
 								<Home />
 							</Route>
 
@@ -56,7 +48,6 @@ class App extends Component {
 									</Route>
 								);
 							})}
-							<Redirect from="/" to="/home" />
 						</Switch>
 					</AnimatePresence>
 				</BrowserRouter>
