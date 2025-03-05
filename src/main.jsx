@@ -48,6 +48,8 @@ class App extends Component {
 									</Route>
 								);
 							})}
+
+							<Route path="*">404</Route>
 						</Switch>
 					</AnimatePresence>
 				</BrowserRouter>
